@@ -18,7 +18,7 @@ The DE algorithm is applied for the identification of criteria weights (decision
 including alternatives performances (training features) and their ranking (target variable). The goal (fitness) function uses the correlation coefficient
 of predicted ranking with real ranking. The predicted ranking is generated using the SPOTIS method and weights calculated by the DE algorithm in each DE iteration.
  It is a profit function. Therefore, higher values denote better results. Examples of use of `evo_spotis` are included 
- in [examples](https://github.com/energyinpython/EVO-SPOTIS/tree/main/examples)
+ in on GitHub in `examples`
 
 Other modules:
 - `additions` including `rank_preference` method for ranking alternatives according to MCDA score

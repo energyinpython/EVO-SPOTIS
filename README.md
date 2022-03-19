@@ -8,10 +8,10 @@ pip install evo-spotis
 ```
 
 # Methods
-mcda_methods:
+mcda_methods module includes:
 - SPOTIS (the Stable Preference Ordering Towards Ideal Solution method)
 
-stochastic_algorithms:
+stochastic_algorithms includes:
 - DE algorithm `DE_algorithm` (the Differential Evolution algorithm)
 
 The DE algorithm is applied for the identification of criteria weights (decision-maker preferences) based on a training dataset with evaluated alternatives,
@@ -24,7 +24,7 @@ Other modules:
 - `additions` including `rank_preference` method for ranking alternatives according to MCDA score
 - `correlations` containing: 
 	- Spearman rank correlation coefficient `spearman_coeff`, 
-	- Weighted Spearman rank correlation coefficient `weigted_spearman_coeff`,
+	- Weighted Spearman rank correlation coefficient `weighted_spearman_coeff`,
 	- Pearson correlation coefficient `pearson_coeff`
 - `normalizations` with methods for decision matrix normalization:
 	- `linear_normalization` - Linear normalization,
@@ -33,5 +33,5 @@ Other modules:
 	- `sum_normalization` - Sum normalization,
 	- `vector_normalization` - Vector normalization
 - `weighting_methods` containing:
-	- `entropy_weighting`.
+	- `entropy_weighting` - Entropy objective weighting method.
 

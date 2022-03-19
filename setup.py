@@ -4,8 +4,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="evo-spotis-aleksandraba",
-    version="0.0.3",
+    name="evo-spotis",
+    version="0.0.1",
     author="Aleksandra Bączkiewicz",
     author_email="aleksandra.baczkiewicz@phd.usz.edu.pl",
     description="Package for Multi-Criteria Decision Analysis with Preference Identification",

@@ -1,0 +1,22 @@
+﻿Cj,Symbol,Name,Explanation,Goal
+C1,battery_power,Battery power,Total energy a battery can store in one time measured in mAh,1
+C2,blue,Blue,Has bluetooth or not,1
+C3,clock_speed,Clock speed,Speed at which microprocessor executes instructions,1
+C4,dual_sim,Dual sim,Has dual sim support or not,1
+C5,fc,Fc (Front camera),Front Camera mega pixels,1
+C6,four_g,Four G,Has 4G or not,1
+C7,int_memory,Internal memory,Internal Memory in Gigabytes,1
+C8,m_dep,Mobile depth,Mobile Depth in cm,-1
+C9,mobile_wt,Mobile weight,Weight of mobile phone,-1
+C10,n_cores,Number of cores,Number of cores of processor,1
+C11,pc,Primary camera,Primary Camera mega pixels,1
+C12,px_height,Px height,Pixel Resolution Height,1
+C13,px_width,Px width,Pixel Resolution Width,1
+C14,ram,RAM,Random Access Memory in Megabytes,1
+C15,sc_h,Screen height,Screen Height of mobile in cm,1
+C16,sc_w,Screen width,Screen Width of mobile in cm,1
+C17,talk_time,Talk time,Longest time that a single battery charge will last when you are,1
+C18,three_g,Three G,Has 3G or not,1
+C19,touch_screen,Touch screen,Has touch screen or not,1
+C20,wifi,Wi-fi,Has wifi or not,1
+C21,price_range,Price,Range of price,-1

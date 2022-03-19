@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="evo-spotis",
-    version="0.0.1",
+    version="0.0.2",
     author="Aleksandra Bączkiewicz",
     author_email="aleksandra.baczkiewicz@phd.usz.edu.pl",
     description="Package for Multi-Criteria Decision Analysis with Preference Identification",

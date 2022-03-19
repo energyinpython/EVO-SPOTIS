@@ -4,9 +4,5 @@ This is Python 3 library for multi-criteria decision analysis with decision-make
 # Installation
 Downloading and installation can be done using pip
 ```
-
-<<<<<<< HEAD
+pip install evo-spotis
 ```
-=======
-```
->>>>>>> b3913de8d52ea7ea829fc5e0244ded91520fb289

@@ -2,7 +2,7 @@
 This is Python 3 library for multi-criteria decision analysis with decision-maker preference identification.
 
 # Installation
-Downloading and installation of `evo_spotis` packege can be done using pip
+Downloading and installation of `evo_spotis` package can be done using pip
 ```
 pip install evo-spotis
 ```

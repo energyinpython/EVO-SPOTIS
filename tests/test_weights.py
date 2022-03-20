@@ -1,7 +1,6 @@
 import unittest
 import numpy as np
-from objective_weights_mcda import normalizations as norms
-from objective_weights_mcda import weighting_methods as mcda_weights
+from evo_spotis import weighting_methods as mcda_weights
 
 
 # Test for Entropy weighting

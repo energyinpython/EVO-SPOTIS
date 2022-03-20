@@ -1,4 +1,4 @@
-from objective_weights_mcda import correlations as corrs
+from evo_spotis import correlations as corrs
 from scipy.stats import pearsonr
 import unittest
 import numpy as np
@@ -14,7 +14,7 @@ class Test_Spearman(unittest.TestCase):
         
         R = np.array([1, 2, 3, 4, 5])
         Q = np.array([1, 3, 2, 4, 5])
-        test_result = corrs.spearman(R, Q)
+        test_result = corrs.spearman_coeff(R, Q)
         real_result = 0.9
         self.assertEqual(test_result, real_result)
 
@@ -30,7 +30,7 @@ class Test_Weighted_Spearman(unittest.TestCase):
         
         R = np.array([1, 2, 3, 4, 5])
         Q = np.array([1, 3, 2, 4, 5])
-        test_result = corrs.weighted_spearman(R, Q)
+        test_result = corrs.weighted_spearman_coeff(R, Q)
         real_result = 0.8833
         self.assertEqual(np.round(test_result, 4), real_result)
 

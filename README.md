@@ -1,8 +1,11 @@
 # EVO-SPOTIS
+
 This is Python 3 library for multi-criteria decision analysis with decision-maker preference identification.
 
 # Installation
+
 Downloading and installation of `evo_spotis` package can be done using pip
+
 ```
 pip install evo-spotis
 ```
@@ -20,6 +23,7 @@ of predicted ranking with real ranking. The predicted ranking is generated using
  It is a profit function. Therefore, higher values denote better results. Examples of use of `evo_spotis` are included on GitHub in `examples`
 
 Other modules:
+
 - `additions` including `rank_preference` method for ranking alternatives according to MCDA score
 - `correlations` containing: 
 	- Spearman rank correlation coefficient `spearman_coeff`, 

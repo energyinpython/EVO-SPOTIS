@@ -20,7 +20,7 @@ stochastic_algorithms includes:
 The DE algorithm is applied for the identification of criteria weights (decision-maker preferences) based on a training dataset with evaluated alternatives,
 including alternatives performances (training features) and their ranking (target variable). The goal (fitness) function uses the correlation coefficient
 of predicted ranking with real ranking. The predicted ranking is generated using the SPOTIS method and weights calculated by the DE algorithm in each DE iteration.
- It is a profit function. Therefore, higher values denote better results. Examples of use of `evo_spotis` are included on GitHub in `examples`
+ It is a profit function. Therefore, higher values denote better results. Examples of use of `evo_spotis` are included on [GitHub](https://github.com/energyinpython/EVO-SPOTIS) in [examples](https://github.com/energyinpython/EVO-SPOTIS/tree/main/examples)
 
 Other modules:
 

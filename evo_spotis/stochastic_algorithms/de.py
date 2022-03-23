@@ -61,7 +61,7 @@ class DE_algorithm():
                 Criteria types. Profit criteria are represented by 1 and cost by -1.
             bounds : ndarray
                 Bounds contain minimum and maximum values of each criterion. Minimum and maximum cannot be the same.
-            verbose : Boolean
+            verbose : bool
                 For True `verbose` value, which is default, information about Best Fitness value in each iteration will be displayed
                 and for False value, it will not
 

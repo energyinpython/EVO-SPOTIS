@@ -140,6 +140,9 @@ Parameters
 		
 .. code-block:: python
 
+	import numpy as np
+	from evo_spotis.stochastic_algorithms import DE_algorithm
+
 	# Create object of the DE_algorithm
 	de_algorithm = DE_algorithm()
 	# run DE algorithm providing decision matrix with training dataset `X_train`, target variable of training dataset `y_train` (ranking), criteria types `types` and `bounds` for the SPOTIS method
@@ -298,6 +301,9 @@ Returns
 		Normalized decision matrix
 
 .. code-block:: python
+
+	from evo_spotis import normalizations as norms
+	import numpy as np
 
 	matrix = np.array([[8, 7, 2, 1],
     [5, 3, 7, 5],

@@ -119,6 +119,8 @@ Output
 Stochastic algorithm
 ______________________
 
+The Differential Evolution algorithm `DE_algorithm` for criteria weights prediction
+
 Parameters
 	var_min : float
 		Lower bound of weights values

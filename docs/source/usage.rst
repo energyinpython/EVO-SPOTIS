@@ -301,6 +301,7 @@ Returns
 		Normalized decision matrix
 
 .. code-block:: python
+
 	import numpy as np
 	from evo_spotis import normalizations as norms
 

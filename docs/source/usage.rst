@@ -70,9 +70,6 @@ Returns
 
 	import numpy as np
 	from evo_spotis.mcda_methods import SPOTIS
-
-	import numpy as np
-	from evo_spotis.mcda_methods import SPOTIS
 	from evo_spotis.additions import rank_preferences
 
 	# provide decision matrix in array numpy.darray

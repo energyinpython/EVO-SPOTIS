@@ -301,9 +301,8 @@ Returns
 		Normalized decision matrix
 
 .. code-block:: python
-
-	from evo_spotis import normalizations as norms
 	import numpy as np
+	from evo_spotis import normalizations as norms
 
 	matrix = np.array([[8, 7, 2, 1],
     [5, 3, 7, 5],

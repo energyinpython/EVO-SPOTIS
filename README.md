@@ -1,6 +1,7 @@
 # EVO-SPOTIS
 
-This is Python 3 library for multi-criteria decision analysis with decision-maker preference identification.
+This is Python 3 library for multi-criteria decision analysis with decision-maker preference identification. The documentation is provided
+[here](https://evo-spotis.readthedocs.io/en/latest/)
 
 # Installation
 

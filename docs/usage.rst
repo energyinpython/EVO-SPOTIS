@@ -21,8 +21,6 @@ The SPOTIS method
 ___________________
 
 
-.. code-block:: python
-
 The SPOTIS method is used to calculate the preference of evaluated alternatives. The SPOTIS method requires providing the decision matrix
 ``matrix``, vector with criteria weights ``weights``, and vector with criteria types ``types`` and minimum and maximum bounds of alternatives performance 
 values for particular criteria. The SPOTIS method returns a vector with preference values ``pref``. To generate the SPOTIS ranking of alternatives, 

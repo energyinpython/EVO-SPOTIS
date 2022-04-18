@@ -1,27 +1,30 @@
+import itertools
 import numpy as np
 from .normalizations import sum_normalization
-import itertools
 
 
 # Entropy weighting
-def entropy_weighting(X, types):
+def entropy_weighting(matrix):
     """
     Calculate criteria weights using objective Entropy weighting method.
 
     Parameters
-    ----------
-        X : ndarray
+    -----------
+        matrix : ndarray
             Decision matrix with performance values of m alternatives and n criteria
-        types : ndarray
         
     Returns
-    -------
+    --------
         ndarray
-            vector of criteria weights
+            Vector of criteria weights
+
+    Examples
+    ----------
+    >>> weights = entropy_weighting(matrix)
     """
     # normalize the decision matrix with sum_normalization method from normalizations as for profit criteria
-    criteria_type = np.ones(np.shape(X)[1])
-    pij = sum_normalization(X, criteria_type)
+    types = np.ones(np.shape(matrix)[1])
+    pij = sum_normalization(matrix, types)
     # Transform negative values in decision matrix X to positive values
     pij = np.abs(pij)
     m, n = np.shape(pij)

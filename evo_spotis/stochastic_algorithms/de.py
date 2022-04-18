@@ -1,10 +1,10 @@
-import numpy as np
 import sys
 import copy
 import random
+import numpy as np
 
 from ..additions import rank_preferences
-from ..correlations import spearman_coeff
+from ..correlations import spearman
 from ..mcda_methods.spotis import SPOTIS
 
 
@@ -18,10 +18,11 @@ class DE_algorithm():
     beta_max = 0.8,
     p_CR = 0.4):
 
-        """Create DE object with initialization of setting parametres of DE
+        """
+        Create DE object with initialization of setting parametres of DE
 
         Parameters
-        ----------
+        -----------
             var_min : float
                 Lower bound of weights values
             var_max : float
@@ -37,6 +38,7 @@ class DE_algorithm():
             p_CR : float
                 Crossover probability
         """
+
         self.var_min = var_min
         self.var_max = var_max
         self.max_it = max_it
@@ -52,7 +54,7 @@ class DE_algorithm():
         SPOTIS method and Spearman rank coefficient
 
         Parameters
-        ----------
+        -----------
             X_train : ndarray
                 Decision matrix containing training dataset of alternatives and their performances corresponding to the criteria
             y_train: ndarray
@@ -66,14 +68,20 @@ class DE_algorithm():
                 and for False value, it will not
 
         Returns
-        -------
+        --------
             ndarray
                 Values of best solution representing criteria weights
             ndarray
                 Best values of fitness function in each iteration required for visualization of fitness function.
             ndarray
                 Mean values of fitness function in each iteration required for visualization of fitness function.
+
+        Examples
+        ----------
+        >>> de_algorithm = DE_algorithm()
+        >>> weights, BestFitness, MeanFitness = de_algorithm(X_train, y_train, types, bounds)
         """
+
         self.var_size = np.shape(X_train)[1]
         self.verbose = verbose
         return DE_algorithm._de_algorithm(self, X_train, y_train, types, bounds)
@@ -83,7 +91,7 @@ class DE_algorithm():
         spotis = SPOTIS()
         pref = spotis(matrix, weights, types, bounds)
         rank = rank_preferences(pref, reverse = False)
-        return spearman_coeff(rank, y_train)
+        return spearman(rank, y_train)
 
 
     def _generate_population(self, X_train, y_train, types, bounds):

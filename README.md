@@ -25,17 +25,23 @@ of predicted ranking with real ranking. The predicted ranking is generated using
 
 Other modules:
 
-- `additions` including `rank_preference` method for ranking alternatives according to MCDA score
+- `additions` including `rank_preference` method for ranking alternatives according to MCDA score.
+
 - `correlations` containing: 
+
 	- Spearman rank correlation coefficient `spearman_coeff`, 
 	- Weighted Spearman rank correlation coefficient `weighted_spearman_coeff`,
-	- Pearson correlation coefficient `pearson_coeff`
+	- Pearson correlation coefficient `pearson_coeff`.
+	
 - `normalizations` with methods for decision matrix normalization:
+
 	- `linear_normalization` - Linear normalization,
 	- `minmax_normalization` - Minimum- Maximum normalization,
 	- `max_normalization` - Maximum normalization,
 	- `sum_normalization` - Sum normalization,
-	- `vector_normalization` - Vector normalization
+	- `vector_normalization` - Vector normalization.
+	
 - `weighting_methods` containing:
+
 	- `entropy_weighting` - Entropy objective weighting method.
 

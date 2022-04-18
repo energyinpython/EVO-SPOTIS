@@ -3,7 +3,8 @@ from .mcda_method import MCDA_method
 
 class SPOTIS(MCDA_method):
     def __init__(self):
-        """Create SPOTIS method object.
+        """
+        Create the SPOTIS method object.
         """
         pass
 
@@ -25,7 +26,17 @@ class SPOTIS(MCDA_method):
         -------
             ndrarray
                 Preference values of each alternative. The best alternative has the lowest preference value. 
+
+        Examples
+        ----------
+        >>> bounds_min = np.amin(matrix, axis = 0)
+        >>> bounds_max = np.amax(matrix, axis = 0)
+        >>> bounds = np.vstack((bounds_min, bounds_max))
+        >>> spotis = SPOTIS()
+        >>> pref = spotis(matrix, weights, types, bounds)
+        >>> rank = rank_preferences(pref, reverse = False)
         """
+        
         SPOTIS._verify_input_data(matrix, weights, types)
         return SPOTIS._spotis(matrix, weights, types, bounds)
 

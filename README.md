@@ -47,7 +47,7 @@ Other modules:
 
 ## License
 
-The evo-spotis library is is licensed under the terms of the MIT license.
+The evo-spotis library is licensed under the terms of the MIT license.
 
 ## Documentation
 

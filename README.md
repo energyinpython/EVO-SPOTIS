@@ -1,9 +1,8 @@
 # EVO-SPOTIS
 
-This is Python 3 library for multi-criteria decision analysis with decision-maker preference identification. The documentation is provided
-[here](https://evo-spotis.readthedocs.io/en/latest/)
+This is Python 3 library for multi-criteria decision analysis with decision-maker preference identification based on historical datasets.
 
-# Installation
+## Installation
 
 Downloading and installation of `evo_spotis` package can be done using pip
 
@@ -11,7 +10,8 @@ Downloading and installation of `evo_spotis` package can be done using pip
 pip install evo-spotis
 ```
 
-# Methods
+## Methods provided
+
 `mcda_methods` module includes:
 - `spotis` with SPOTIS method (the Stable Preference Ordering Towards Ideal Solution method)
 
@@ -45,3 +45,11 @@ Other modules:
 
 	- `entropy_weighting` - Entropy objective weighting method.
 
+## License
+
+The evo-spotis library is is licensed under the terms of the MIT license.
+
+## Documentation
+
+Documentation of this library with instruction for installation and usage is provided
+[here](https://evo-spotis.readthedocs.io/en/latest/)

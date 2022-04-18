@@ -15,7 +15,7 @@ C13,px_width,Px width,Pixel Resolution Width,1
 C14,ram,RAM,Random Access Memory in Megabytes,1
 C15,sc_h,Screen height,Screen Height of mobile in cm,1
 C16,sc_w,Screen width,Screen Width of mobile in cm,1
-C17,talk_time,Talk time,Longest time that a single battery charge will last when you are,1
+C17,talk_time,Talk time,Longest time that a single battery charge will last when you are talking,1
 C18,three_g,Three G,Has 3G or not,1
 C19,touch_screen,Touch screen,Has touch screen or not,1
 C20,wifi,Wi-fi,Has wifi or not,1

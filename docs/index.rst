@@ -1,4 +1,4 @@
-Welcome to evo_spotis documentation!
+Welcome to evo-spotis documentation!
 ===================================
 
 This is Python 3 library for multi-criteria decision analysis with decision-maker preference identification.

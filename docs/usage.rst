@@ -6,11 +6,11 @@ Usage
 Installation
 -------------
 
-To use ``evo_spotis``, first install it using the pip command, as demonstrated below.
+To use ``evo-spotis``, first install it using the pip command, as demonstrated below.
 
 .. code-block:: python
 
-	pip install evo_spotis
+	pip install evo-spotis
 
 
 Usage examples

@@ -15,7 +15,7 @@ pip install evo-spotis
 `mcda_methods` module includes:
 - `spotis` with SPOTIS method (the Stable Preference Ordering Towards Ideal Solution method)
 
-stochastic_algorithms includes:
+`stochastic_algorithms` module includes:
 - DE algorithm `DE_algorithm` (the Differential Evolution algorithm)
 
 The DE algorithm is applied for the identification of criteria weights (decision-maker preferences) based on a training dataset with evaluated alternatives,

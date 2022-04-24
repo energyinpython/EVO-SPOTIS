@@ -1,0 +1,31 @@
+Detecting python files..
+Analyzing 26 files using 8 processes..
+~2, ~3       C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\build\lib\evo_spotis\__init__.py
+2.4, 3.0     C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\build\lib\evo_spotis\additions.py
+2.3, 3.0     C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\build\lib\evo_spotis\correlations.py
+~2, ~3       C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\build\lib\evo_spotis\mcda_methods\__init__.py
+!2, 3.4      C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\build\lib\evo_spotis\mcda_methods\mcda_method.py
+2.4, 3.0     C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\build\lib\evo_spotis\mcda_methods\spotis.py
+~2, ~3       C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\build\lib\evo_spotis\normalizations.py
+~2, ~3       C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\build\lib\evo_spotis\stochastic_algorithms\__init__.py
+2.6, 3.0     C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\build\lib\evo_spotis\stochastic_algorithms\de.py
+2.6, 3.0     C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\build\lib\evo_spotis\weighting_methods.py
+~2, ~3       C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\docs\conf.py
+~2, ~3       C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\evo_spotis\__init__.py
+2.4, 3.0     C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\evo_spotis\additions.py
+2.3, 3.0     C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\evo_spotis\correlations.py
+~2, ~3       C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\evo_spotis\mcda_methods\__init__.py
+!2, 3.4      C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\evo_spotis\mcda_methods\mcda_method.py
+2.4, 3.0     C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\evo_spotis\mcda_methods\spotis.py
+~2, ~3       C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\evo_spotis\normalizations.py
+~2, ~3       C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\evo_spotis\stochastic_algorithms\__init__.py
+2.6, 3.0     C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\evo_spotis\stochastic_algorithms\de.py
+2.6, 3.0     C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\evo_spotis\weighting_methods.py
+2.3, 3.0     C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\examples\main.py
+!2, 3.0      C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\setup.py
+2.1, 3.0     C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\tests\test_correlations.py
+2.1, 3.0     C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\tests\test_mcda_methods.py
+2.1, 3.0     C:\Informatyka\MCDA_2022_for_articles\pypi_packages\EVO-SPOTIS\tests\test_weights.py
+Tip: Since '# novm' or '# novermin' weren't used, a speedup can be achieved using: --no-parse-comments
+Minimum required versions: 3.4
+Incompatible versions:     2

@@ -42,9 +42,9 @@ def plot_scatter(data, model_compare):
             ax.annotate(txt, (data[el[0]][i], data[el[1]][i]), fontsize = 14, style='italic',
                          verticalalignment='bottom', horizontalalignment='right')
 
-        ax.set_xlabel(el[0], fontsize = 12)
-        ax.set_ylabel(el[1], fontsize = 12)
-        ax.tick_params(axis='both', labelsize=12)
+        ax.set_xlabel(el[0], fontsize = 16)
+        ax.set_ylabel(el[1], fontsize = 16)
+        ax.tick_params(axis='both', labelsize=16)
         ax.set_xticks(list_rank)
         ax.set_yticks(list_rank)
 
@@ -81,12 +81,12 @@ def plot_fitness(BestFitness, MeanFitness):
     fig, ax = plt.subplots()
     ax.plot(BestFitness, label = 'Best fitness value')
     ax.plot(MeanFitness, label = 'Mean fitness value')
-    ax.set_xlabel('Iterations', fontsize = 12)
-    ax.set_ylabel('Fitness value', fontsize = 12)
-    ax.tick_params(axis='both', labelsize=12)
+    ax.set_xlabel('Iterations', fontsize = 15)
+    ax.set_ylabel('Fitness value', fontsize = 15)
+    ax.tick_params(axis='both', labelsize=15)
     ax.grid(True)
     ax.set_axisbelow(True)
-    ax.legend(fontsize = 12)
+    ax.legend(fontsize = 15)
     plt.tight_layout()
     plt.savefig('results/fitness.pdf')
     plt.show()
@@ -134,14 +134,14 @@ def plot_weights(weights):
     ax.scatter(x = list_rank, y = weights['Real weights'].to_numpy(), label = 'Real weights')
     ax.scatter(x = list_rank, y = weights['DE weights'].to_numpy(), label = 'DE weights')
     
-    ax.set_xlabel('Criteria', fontsize = 12)
-    ax.set_ylabel('Weight value', fontsize = 12)
+    ax.set_xlabel('Criteria', fontsize = 16)
+    ax.set_ylabel('Weight value', fontsize = 16)
     ax.set_xticks(list_rank)
 
     ax.set_xticklabels(list(weights.index))
-    ax.tick_params(axis = 'both', labelsize = 12)
+    ax.tick_params(axis = 'both', labelsize = 16)
     y_ticks = ax.yaxis.get_major_ticks()
-    plt.legend()
+    ax.legend(fontsize = 15, ncol = 2)
     ax.grid(True)
     ax.set_axisbelow(True)
     plt.tight_layout()
@@ -211,6 +211,7 @@ def main():
 
     # Calculate correlation between real weights and predicted weights of train alternatives using Pearson correlation coefficient
     print('\nWeights correlation: ', corrs.pearson_coeff(train_weights, BestSolution))
+    
     plot_weights(weights)
 
     # Save the best and mean Fitness values in datafarme and plot chart of Fitness values

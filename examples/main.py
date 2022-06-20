@@ -11,6 +11,8 @@ from evo_spotis import correlations as corrs
 from evo_spotis import weighting_methods as mcda_weights
 
 from objective_weighting import weighting_methods as pyweights
+from sklearn.model_selection import train_test_split
+
 
 # Functions for result visualizations
 def plot_scatter(data, model_compare):
@@ -131,8 +133,8 @@ def plot_weights(weights):
     list_rank = np.arange(1, len(weights) + 1, step)
     
     fig, ax = plt.subplots(figsize = (10, 5))
-    ax.scatter(x = list_rank, y = weights['Real weights'].to_numpy(), label = 'Real weights')
-    ax.scatter(x = list_rank, y = weights['DE weights'].to_numpy(), label = 'DE weights')
+    ax.scatter(x = list_rank, y = weights['Real weights'].to_numpy(), c = '#ff7f0e', marker = 'o', s = 70, label = 'Real weights')
+    ax.scatter(x = list_rank, y = weights['DE weights'].to_numpy(), c = 'k', marker = '*', s = 50, label = 'DE weights')
     
     ax.set_xlabel('Criteria', fontsize = 16)
     ax.set_ylabel('Weight value', fontsize = 16)
@@ -141,7 +143,9 @@ def plot_weights(weights):
     ax.set_xticklabels(list(weights.index))
     ax.tick_params(axis = 'both', labelsize = 16)
     y_ticks = ax.yaxis.get_major_ticks()
-    ax.legend(fontsize = 15, ncol = 2)
+    # ax.legend(fontsize = 15, ncol = 2)
+    ax.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc='lower left',
+    ncol=2, mode="expand", borderaxespad=0., fontsize = 15)
     ax.grid(True)
     ax.set_axisbelow(True)
     plt.tight_layout()
@@ -168,8 +172,19 @@ def main():
     # In this example criteria types are given in the last row of CSV file so load criteria types from the last row
     types = data.iloc[len(data) - 1, :].to_numpy()
     # Load examplary dataset with the first 200 alternatives
-    df_data = data.iloc[:200, :]
+    # df_data = data.iloc[:200, :] -1
+    df_data = data.iloc[:-1, :]
     # Convert dataframe to numpy array (ndarray) for faster calculations
+
+    '''
+    # split whole dataset to train and test datasets
+    X_train_df, X_test_df = train_test_split(df_data, test_size=0.2, random_state=42)
+
+    X_train = X_train_df.to_numpy()
+    X_test = X_test_df.to_numpy()
+
+    '''
+    
     whole_matrix = df_data.to_numpy()
 
     # Determine bounds of alternatives performances for the SPOTIS method
@@ -177,22 +192,52 @@ def main():
     bounds_max = np.amax(whole_matrix, axis = 0)
     bounds = np.vstack((bounds_min, bounds_max))
 
-    # Load train and test datasets
-    # y_train which is training target variable with the reference ranking of alternatives is given in the last column
-    train_df = pd.read_csv('train.csv', index_col = 'Ai')
-    X_train = train_df.iloc[:len(train_df) - 1, :-1].to_numpy()
-    y_train = train_df.iloc[:len(train_df) - 1, -1].to_numpy()
+    X_train_df_full = pd.read_csv('train_dataset.csv', index_col='Ai')
+    X_train_df = X_train_df_full.drop(['Rank'], axis = 1)
+    X_train = X_train_df.to_numpy()
 
-    # y_test which is test target variable with the reference ranking of alternatives is given in the last column
-    test_df = pd.read_csv('test.csv', index_col = 'Ai')
-    X_test = test_df.iloc[:len(test_df) - 1, :-1].to_numpy()
-    y_test = test_df.iloc[:len(test_df) - 1, -1].to_numpy()
+    y_train = X_train_df_full['Rank'].to_numpy()
+
+
+    X_test_df_full = pd.read_csv('test_dataset.csv', index_col='Ai')
+    X_test_df = X_test_df_full.drop(['Rank'], axis = 1)
+    X_test = X_test_df.to_numpy()
+
+    y_test = X_test_df_full['Rank'].to_numpy()
+
+    # Load symbols of criteria in columns 
+    cols = [r'$C_{' + str(y) + '}$' for y in range(1, data.shape[1] + 1)]
+    list_alt_names = [r'$A_{' + str(i) + '}$' for i in range(1, X_test_df.shape[0] + 1)]
+    list_alt_names_train = [r'$A_{' + str(i) + '}$' for i in range(1, X_train_df.shape[0] + 1)]
 
     # In this example real weights are determined using Entropy weighting method
     train_weights = mcda_weights.entropy_weighting(X_train)
-    # Load symbols of criteria in columns 
-    cols = [r'$C_{' + str(y) + '}$' for y in range(1, data.shape[1] + 1)]
 
+
+    # Simulation of evaluation train and test datasets by expert
+    '''
+    spotis = SPOTIS()
+    # evaluation of training dataset by decision-makers
+    pref = spotis(X_train, train_weights, types, bounds)
+    # y_train which is training target variable with the reference ranking of alternatives
+    y_train = rank_preferences(pref, reverse = False)
+
+    # evaluation of test dataset by decision-makers
+    pref = spotis(X_test, train_weights, types, bounds)
+    # y_test which is test target variable with the reference ranking of alternatives
+    y_test = rank_preferences(pref, reverse = False)
+
+    # save datasets
+    train_dataset = pd.DataFrame(X_train, index=list_alt_names_train, columns = cols)
+    train_dataset['Rank'] = y_train
+    train_dataset = train_dataset.rename_axis('Ai')
+    train_dataset.to_csv('train_dataset.csv')
+
+    test_dataset = pd.DataFrame(X_test, index=list_alt_names, columns = cols)
+    test_dataset['Rank'] = y_test
+    test_dataset = test_dataset.rename_axis('Ai')
+    test_dataset.to_csv('test_dataset.csv')
+    '''
 
     
     # Run the DE algorithm
@@ -230,27 +275,32 @@ def main():
     # Calculate correlation between real ranking and predicted ranking of test alternatives using Spearman rank correlation coefficient
     print('\nRankings consistency: ', corrs.spearman(y_test, y_pred))
 
+    
     # Save result ranking in dataframe and plot chart
-    results = pd.DataFrame(index = test_df.index[:-1])
+    results = pd.DataFrame(index = list_alt_names)
     results['Real rank'] = y_test
     results['Predicted rank'] = y_pred
     results.to_csv('results/results_de.csv')
+
+    results = results.sort_values(by=['Real rank'])
     
-    plot_rankings(results)
+    # plot first top-40 alternatives
+    plot_rankings(results.iloc[:40,:])
     
 
-    '''
     # ====================================================================================
-    # Comparative analysis
+    # Comparative analysis with
     # Other approaches determining weights
     # train_weights are real weights
     # de_weights are weights determined by DE algorithm
     # X_test is matrix to assess (dataset of products to assess)
     # y_test is real ranking
-    dw = pd.read_csv('weights_DE.csv')
-    de_weights = dw['DE weights'].to_numpy()
+    # dw = pd.read_csv('weights_DE.csv')
+    # de_weights = dw['DE weights'].to_numpy()
 
-    results_benchmark = pd.DataFrame(index = test_df.index[:-1])
+    de_weights = copy.deepcopy(BestSolution)
+
+    results_benchmark = pd.DataFrame(index = list_alt_names)
     results_benchmark['Real'] = y_test
 
     # DE approach
@@ -303,7 +353,7 @@ def main():
 
     df_new_heatmap_rs.to_csv('results/df_new_heatmap_rs.csv')
     # ===========================================================================================
-    '''
+    
 
     
 if __name__ == '__main__':

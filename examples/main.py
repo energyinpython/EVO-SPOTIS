@@ -26,7 +26,7 @@ def plot_scatter(data, model_compare):
 
     Examples
     ----------
-    >>> plot_scatter(data. model_compare)
+    >>> plot_scatter(data, model_compare)
     """
     sns.set_style("darkgrid")
     list_rank = np.arange(1, len(data) + 2, 4)
@@ -143,7 +143,6 @@ def plot_weights(weights):
     ax.set_xticklabels(list(weights.index))
     ax.tick_params(axis = 'both', labelsize = 16)
     y_ticks = ax.yaxis.get_major_ticks()
-    # ax.legend(fontsize = 15, ncol = 2)
     ax.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc='lower left',
     ncol=2, mode="expand", borderaxespad=0., fontsize = 15)
     ax.grid(True)
